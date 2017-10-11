@@ -1,14 +1,32 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      POC - Barcode Scanner
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-content padding>
+    <div class="row header">
+      <div class="col">Barcode</div>
+      <div class="col">Active / Inactive</div>
+      <div class="col">DateTime</div>
+      <div class="col"># Times Scanned</div>
+      <div class="col">Info</div>
+    </div>
+    <div class="row" *ngFor="let data of getData()">
+      <div class="col">{{data.barcode}}</div>
+      <div class="col">{{data.active}}</div>
+      <div class="col">{{data.dateTime}}</div>
+      <div class="col">{{data.timesScanned}}</div>
+      <div class="col">{{data.info}}</div>
+    </div>
+    <div class="row" padding-top>
+      <button ion-button (click)="scan()">Scan ... </button>
+      <div *ngIf="scanData">
+          <p>Scanned Text : {{scanData.text}}</p>
+          <p>Scanned Format : {{scanData.format}}</p>
+
+      </div>
+    </div>
 </ion-content>

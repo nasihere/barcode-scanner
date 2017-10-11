@@ -1,3 +1,15 @@
 page-home {
+    .col {
+        border: solid 1px grey;
+    }
+    .header {
+        background-color: #efefef;
+    }
+    .col:last-child {
+        border-right: solid 1px grey;
+    }
 
+    .row:last-child .col {
+        border-bottom: solid 1px grey;
+    }
 }
