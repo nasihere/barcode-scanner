@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 // Define the port to run on
-app.set('port', 3000);
+var PORT = process.env.port || 3000;
+app.set('port', PORT);
 app.use(express.static(__dirname + '/www'));
 // Listen for requests
 var server = app.listen(app.get('port'), function() {
