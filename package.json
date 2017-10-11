@@ -10,7 +10,7 @@
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
-    "start": "ionic-app-scripts build"
+    "start": "npm run ionic:build; npm run ionic:serve"
   },
   "dependencies": {
     "@angular/common": "4.4.3",
